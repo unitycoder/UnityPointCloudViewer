@@ -1,4 +1,4 @@
-# UnityPointCloudTools
+# Unity PointCloud-Viewer
 Point Cloud Viewer and Tools for Unity
 
 Available for purchase at Unity Asset Store : https://www.assetstore.unity3d.com/en/content/16019
@@ -6,11 +6,11 @@ Available for purchase at Unity Asset Store : https://www.assetstore.unity3d.com
 This is public repository for Unity3D Point Cloud- Plugin
 For posting bugs / issues, feature requests, comments etc.
 
-Feel free to post them at https://github.com/unitycoder/UnityPointCloudTools/issues
+Feel free to post them at https://github.com/unitycoder/UnityPointCloudViewer/issues
 
 # Documentation
 
-Will be added to the wiki https://github.com/unitycoder/UnityPointCloudTools/wiki
+Will be added to the wiki https://github.com/unitycoder/UnityPointCloudViewer/wiki
 
 # Website
 
