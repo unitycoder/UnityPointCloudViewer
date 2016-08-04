@@ -8,6 +8,10 @@ For posting bugs / issues, feature requests, comments etc.
 
 Feel free to post them at https://github.com/unitycoder/UnityPointCloudViewer/issues
 
+# Unity Forums
+
+http://forum.unity3d.com/threads/released-point-cloud-viewer-tools.240536/
+
 # Documentation
 
 Will be added to the wiki https://github.com/unitycoder/UnityPointCloudViewer/wiki
