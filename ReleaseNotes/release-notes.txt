@@ -1,0 +1,122 @@
+*** PointCloud Viewer & Tools for Unity ***
+
+v1.8
+
+- Added: Multithread DX11 Viewer loading and Point Picking (enable [x] useThreading at BinaryViewerDX11 component)
+- Added: Experimental point picking with measuring (see example scene: BinaryViewerDX11WithMeasuring.scene)
+- Added: Runtime raw point cloud viewer (parses raw pointclouds, see example scene: RuntimeParserLoaderDX11.scene)
+- Added: BinaryViewerDx11.cs now has public bool option [x] LoadAtStart, if enabled, ReadPointCloud() is called at Start()
+- Added: Example scene "LoadMultipleDX11CloudsThreaded.scene", to spawn multiple DX11 viewers with different clouds
+- Added: MeshConverter: You can now convert multiple point clouds to meshes by dragging whole folder to the PointCloud Source-field)
+- Added: New DX11 shaders to support PointSize in DX11 mode, Separate version for Linear Lighting *You can access them from the link inside PointCloudTools/Materials/Shaders/Extras/
+
+- Fixed: MeshConverter: Optimize Mesh Point cloud feature now works (currently points are sorted by X axis, no other options yet)
+- Fixed: Some Catia ascii files failed to import (because extra characters in comments / header)
+- Fixed: Created meshes now have disabled light and blend probes (since those features are not used)
+- Fixed: Fixed missing script error in "scene_VideoDepthExtrude.scene"
+- Fixed: MeshConverter failed with large clouds (because PointData struct used too much memory)
+- Fixed: `System.IO.File' does not contain a definition for `ReadAllBytes' (Caused by having SamsungTV as target platform)
+
+- Changed: BinaryViewerDx11.cs changed OnDisable() to OnDestroy() instead (so that gameobject can be disabled, and re-enabled)
+- Changed: BinaryReader now gives warning if file is too large to read (instead of crashing or error messages)
+- Changed: Renamed/Moved DX11-Viewer shaders under UnityCoder/PointCloud/DX11/*
+- Changed: Renamed/Moved Mesh shaders under UnityCoder/PointCloud/Mesh/*
+- Changed: Renamed/Cleaned folders
+- Changed: Moved PeekHeader logic into separate script
+- Changed: Not using PointData struct anymore since it caused memory and sorting issues
+- Changed: Moved WebplayerViewerDX11.scene into Old/ folder, since webplayer is removed on 5.4 already
+
+*-----------------------------------------------------------------------*
+
+v1.7
+
+- Added: PointCloud2Mesh now has basic LOD mesh generation (with adjustable LOD amount)
+- Added: Link for custom PointMeshSizeDX11 shaders (can adjust point size for mesh points in DX11 mode, since point size is not supported in DX11) *See Materials/Shaders/Extras-folder)
+
+- Fixed: Unity5.2 or later couldnt set output filename in save dialog
+- Fixed: CloudCompare PLY file had extra comment in header, it gets correctly skipped now
+
+- Note: LOD meshes are not saved to project folder, they currently live in the scene only
+- Note: Optimize Points & Decimate points are not supported with Brekel PointCloud2Binary importer
+
+- Known issues: Optimize Points does not work properly, loses precision in some cases
+
+*-----------------------------------------------------------------------*
+
+v1.6
+- Added: New material "PointCloudColorsMeshAlpha.material" (and shader "PointCloudMeshColorsAlpha.shader") with adjustable color tint & alpha
+- Added: PointCloud2Mesh now imports .LAS & .PTS files
+- Added: **Experimental** PseudoLight & VertexPush scene "scene_MeshPointPush" for mesh clouds (sets point brightness based on distance to give object and pushes(displaces) points away form given object)
+- Added: Basic decimate cloud for PointCloud2Mesh (remove every #nth point)
+- Added: Display selected file size (below sourcefile field)
+- Added: **Experimental** [x] Optimize Points for PointCloud2Mesh (easier to see from scene view while playing), it sorts the points along X axis (to allow mesh pieces to get culled easier), but doesnt work well with all values, if your cloud seems to be missing points, disable Optimize points.
+
+- Changed: Project is now updated to Unity5.1
+- Changed: Point data is now internally read as doubles instead of floats (to avoid loss of precision during scaling)
+- Changed: DX11 viewer & DX11 shaders now use less memory
+- Changed: Improved .LAS parsing PointDataRecordFormats #2 & #3 are now supported
+- Changed: With PointCloud2Mesh you dont need to select import format anymore, instead parser tries to read any suitable point cloud data (in common formats)
+- Changed: Progress bar now also display during mesh saving
+- Changed: Deleted 20 mesh clouds from "scene_mobile_heavy01.scene" to make it lighter
+
+- Fixed: PointCloud2Mesh AutoOffset (it didnt work if FlipYZ was not enabled)
+- Fixed: Fixed several parsing problems with some files (.asc, .pts, .las, .xyz)
+- Fixed: .LAS colors values are now scaled to 0-255 (some files had different ranges)
+
+- Note: DX11 Point clouds doesnt seem to work if Unity v5.x "[x] Virtual Reality Supported" is enabled
+- Note: DX11 point clouds or Mesh point clouds doesnt seem to work with WebGL viewer
+
+*-----------------------------------------------------------------------*
+
+v1.5
+- Added: ".LAS" import support for binary cloud converter *Only LAS format#2 is currently supported
+- Added: ".PTS" import support for binary cloud converter (PTS: XYZ, XYZI, XYZIRGB, XYZRGB) *For now intensity value can be converted as RGB
+- Added: "Window/PointCloudTools/Create test binary cloud" for creating random point clouds with adjustable point amount (for debug purposes)
+- Added: "Window/PointCloudTools/Show header data helper" for printing out text based file headers (for debug purposes, to see what the file contains, ascii only)
+- Added: "isLoading" boolean to check if we are still in loading
+
+- Changed: Added "rotateWithRightMouse" bool into "SimpleSmoothMouseLook.cs", so you can rotate view while right mouse button is down
+- Changed: BinaryViewer now automatically adds ".bin" to end of the file, if its missing in the inspector field
+- Changed: .ASC reader now tries to skip all comment lines from start of the file (to allow reading Geomagic .asc files)
+
+- Fixed: Manual offset values (had .x for all axis, instead of .x .y .z)
+- Fixed: BinaryConverter now removes double or triple spaces between values, to fix Geomagic .asc import
+
+- Note: MeshConverter does not yet support .LAS or .PTS importing (use some external tools to convert them to another supported format)
+
+
+*-----------------------------------------------------------------------*
+
+v1.4
+- Added: Brekel Binary & Animated Frames viewer support (Experimental)
+- Added: Brekel Binary Animated Frames to Mesh conversion support (Experimental)
+- Added: Mobile demo scene (using meshes) "scene_mobile_heavy01.scene"
+
+- Changed: Faster binary loading *If you experience out of memory problems, do let me know! *2gb is max file size..
+
+
+*-----------------------------------------------------------------------*
+
+v1.3
+- Added: WebplayerViewerDX11 (loads binary file from url using WWW)
+- Added: Import normals (PLY format only and PointCloud2MeshConverter only. Not for DX11 yet)
+- Added: Shader+Materials with normals (PointCloudColorsNormalsMesh)
+
+- Starting to cleanup "BinaryViewerDX11", moved code from Start() into ReadPointCloud()
+
+
+*-----------------------------------------------------------------------*
+
+v1.2
+- Fixed: PointCloud2MeshConverter failed to save mesh, if point amount was less than given vertex limit amount
+
+
+*-----------------------------------------------------------------------*
+
+v1.1
+- Initial release
+
+
+*-----------------------------------------------------------------------*
+
+unitycoder.com
