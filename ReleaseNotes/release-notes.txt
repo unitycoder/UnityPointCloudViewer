@@ -1,5 +1,32 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v1.9
+
+- Improved: Faster point cloud to binary conversion (around 2-4 times faster)
+
+- Added: Octree point picking and closest point selection preview (for DX11 viewer) *Requires Nition Unity Octree (included in the package)
+- Added: ASC format now supports RGB colors (Geomagic XYZRGB files can be loaded with this, wont work with XYZ or XYZRGB)
+- Added: PointCloud2Mesh converter now has option to disable: [x] Add Meshes to current scene (so they are only saved as assets)
+- Added: GLDebug.cs helper script for drawing GL lines (could use for measurement/closest point)
+- Added: Shader for android (supports color and point size) "UnityCoder/PointCloud/Mesh/AndroidColorSize"
+- Added: New shader "PointCloudColorSizeByDistanceDX11" (scales points away from near camera)
+- Added: Sample video clips for "scene_VideoDepthExtrude.scene" example *Note: uses movietexture
+- Added: More error handling on point cloud to binary conversion
+- Added: Added more instruction texts to example scene UI's
+
+- Fixed: MovieTexture error in "VideoDepthPlayer.cs" if building for mobile platforms
+- Fixed: Shader errors in 5.6 and later versions issue#28 https://github.com/unitycoder/UnityPointCloudViewer/issues/28
+- Fixed: `UnityEngine.Renderer.useLightProbes' is obsolete (in 5.6 and later)
+
+- Changed: Updated to Unity 5.3.7p4
+- Changed: Binaryfile loading is now bit times faster (in both non-threaded and threaded loaders)
+- Changed: Organized BinaryViewerDx11 inspector fields
+
+See latest updates/issues here:
+https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*----------------------------------------------------O.o-------------------*
+
 v1.8
 
 - Added: Multithread DX11 Viewer loading and Point Picking (enable [x] useThreading at BinaryViewerDX11 component)
