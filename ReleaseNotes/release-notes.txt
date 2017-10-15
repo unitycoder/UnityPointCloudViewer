@@ -1,5 +1,27 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v1.91
+
+- Added: Support for .PCD Ascii file format v0.7 *for color, only single value is supported, not separate R G B yet
+- Added: Example scene "BinaryViewerDX11WithMeasuring-Override" to show how to override MeasurementManager DrawLine() method
+- Added: New Shaders "PointCloudHeightGradientColorOpaqueDX11" and "PointCloudHeightGradientColorOpaqueDX11" for displaying single color point cloud with gradient (based on world Y height)
+- Added: UpdatePointData() and UpdateColorData() to easily submit your own point cloud data into viewer, see example Scene "Your_Own_Pointcloud_Data_Viewer.scene"
+- Added: DX11 PointCloud VR (singlepass) shader material for testing: PointCloud_DX11_FixedColorOpaque-VR.mat
+
+- Fixed: MovieTexture error in "VideoDepthPlayer.cs" if building for webgl
+- Fixed: .PTS intensity value parsing : https://github.com/unitycoder/UnityPointCloudViewer/issues/30
+- Fixed: Nullref error if ReadRGB not selected, but ReadIntensity was selected
+- Fixed: Nullref error if loaded animated point cloud, but file was not found
+- Fixed: CloudCompare .PLY has extra comment line https://github.com/unitycoder/UnityPointCloudViewer/issues/34
+- Fixed: Disable lightprobes on lod meshes
+
+- Changed: Upgraded project to Unity 5.5.1f1
+- Changed: Default point color alpha is now 1 (used to be 0.5)
+- Changed: When converting to mesh, new gameobject folder is created per conversion (instead of adding points under same gameobject)
+- Changed: Removed static singleton "instance" from BinaryViewerDX11.cs
+
+*----------------------------------------------------\O/-------------------*
+
 v1.9
 
 - Improved: Faster point cloud to binary conversion (around 2-4 times faster)
