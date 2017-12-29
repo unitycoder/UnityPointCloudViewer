@@ -1,5 +1,20 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v1.92
+- Added: PCD header binary checking (as only ascii .pcd is supported)
+- Added: PLY header binary checking (as only ascii .ply is supported)
+- Added: "BinaryViewerDX11-LoadNewCloud.scene" (Example scene for loading new cloud with script)
+- Added: Example point cloud data file "StreamingAssets/sample2.bin" from http://graphics.stanford.edu/data/3Dscanrep/ (used in the "LoadMultipleDX11CloudsThreaded.scene")
+
+- Fixed: Multiple PLY importer bugs (CloudCompare Normals order, header parsing)
+- Fixed: Multiple LAS importer bugs (Missing colors, unused arrays)
+- Fixed: Shader error in 2017.x https://github.com/unitycoder/UnityPointCloudViewer/issues/37
+
+See latest updates/issues here:
+https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
 v1.91
 
 - Added: Support for .PCD Ascii file format v0.7 *for color, only single value is supported, not separate R G B yet
