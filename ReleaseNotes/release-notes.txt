@@ -1,5 +1,20 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v1.93
+
+- Added: New material "MeshDX11QuadNormals-DirectionalLight.mat" (Quad Billboard for Point Mesh that has Normals, supports Directional Light)
+- Added: New material "MeshDX11QuadNormalsAligned-Unlit.mat" (Quad Billboard for Point Mesh that has Normals, unlit)
+- Added: New material "MeshDX11QuadNormalsAligned-Unlit-SizeByDistance.mat" (Point mesh, scale by distance, nearer is smaller. For example: use with mesh lods, to make points larger when far away)
+- Added: New material "PointCloudMeshColorAlphaFadeByDistance.mat" (Point mesh, fade by distance)
+
+- Changed: Upgraded project to Unity 5.6.1f1
+- Changed: Moved sample data from "StreamingAssets/" into "StreamingAssets/PointCloudViewerSampleData/"
+
+See latest updates/issues here:
+https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
 v1.92
 - Added: PCD header binary checking (as only ascii .pcd is supported)
 - Added: PLY header binary checking (as only ascii .ply is supported)
@@ -9,9 +24,6 @@ v1.92
 - Fixed: Multiple PLY importer bugs (CloudCompare Normals order, header parsing)
 - Fixed: Multiple LAS importer bugs (Missing colors, unused arrays)
 - Fixed: Shader error in 2017.x https://github.com/unitycoder/UnityPointCloudViewer/issues/37
-
-See latest updates/issues here:
-https://github.com/unitycoder/UnityPointCloudViewer/issues
 
 *-----------------------------------------------------------------------*
 
