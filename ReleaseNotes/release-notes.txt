@@ -1,5 +1,60 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.00
+
+- Feature: Support for CommandBuffers (to draw DX11 points and/or depthbuffer)
+- Feature: PointCloudDynamicResolution adjuster (set amount of visible points in DX11 viewer and point size)
+- Feature: 32bit mesh index buffer support for Unity 2017.3 or newer (create point meshes with more than 64k points)
+- Feature: Editor plugin now saves/loads converter preferences to editorprefs (PointCloud2Mesh and PointCloud2Binary)
+- Feature: Randomize Points option to BinaryViewer to evenly randomize points (use with PointCloudDynamicResolution adjuster)
+- Feature: Display points toggle (to toggle point rendering)
+- Feature: Render only to main camera toggle (to render only with MainCamera-tagged camera). Otherwise caused slowdown with multiple cameras
+- Feature: Middle Mouse Button Panning (with SimpleSmoothMouseLook)
+- Feature: Can pick/measure points between multiple DX11 viewers
+- Feature: Initial version of BoxIntersectsCloud() to allow checking collisions with point cloud
+- Feature: Pack Colors option in PointCloudViewerDX11 (optimizes point data for GPU)
+- Feature: Added initial mouse orbit in SimpleSmoothMouseLook (disabled by default)
+
+- Improved: Animated .bin file faster loading
+- Improved: Support for large (+2gb) animated point cloud .bin files (next limit is c# vector3 max array size)
+- Improved: Using packed colors with 50 million points, cpu main stats went down from 120ms to 74ms
+
+- Added: Helper methods to BinaryViewerDX11: GetTotalPointCount(), GetActivePointCount(), GetPointSize(), ToggleCloud(), SetPointSize(), AdjustVisiblePointsAmount(), 
+- Added: PointCloudColorSizeFogDX11v2.material and shader that supports fog
+- Added: MeshPointsDX11TextureMask material (can use texture alpha as a mask for point shape)
+- Added: MeshPointsDX11QuadCircle material (draws circle instead of quad)
+- Added: MeshPointsDX11BoxDirectionalLight material (draws 3D box at point position, affected by directional light)
+- Added: MeshPointsDX11BoxDirectionalLight+Shadows+Fog material (draws 3D box at point position, affected by directional light + fog and supports shadows with point size)
+- Added: All DX11 and Mesh shaders now support GAMMA and LINEAR modes
+- Added: New example scene for taking measurements (BinaryViewerDX11-With-Measuring.scene)
+- Added: New example scene for placing prefabs on clicked points (PointCloud-PlaceMarkers.scene)
+
+- Changed: Renamed BinaryViewerDX11.cs into PointCloudViewerDX11.cs
+- Changed: Re-arranged folders (to make folder hierarchy more cleaner/flatter)
+- Changed: RuntimeViewer filepath can be full uri, or filename only (then StreamingAssets path is used instead)
+- Changed: Renamed "Window/PointCloudTools/ShowHeaderDataHelper" to "Window/PointCloudTools/View File Header"
+- Changed: Some variable names in PointCloud2Mesh and PointCloud2Binary
+- Changed: Manual offset now works as an final world space offset value, that is added to the XYZ value (after point XYZ value is scaled and flipped). Calculated as finalXYZ += manualOffset
+- Changed: You can now use both autoOffsetNearZero and manualOffset when converting data
+- Changed: Removed static variables from BinaryViewerDX11 and RuntimeViewerDX11, to easily allow multiple viewer in one scene
+- Changed: SimpleSmoothMouseLook now allows changing keys for movement
+
+- Fixed: Null ref errors, if tried to load animated cloud but loading failed
+- Fixed: CloudCompare saved .ply to my .bin conversion header parsing errors
+- Fixed: MeshPointsDX11QuadOffset shader transform issues https://github.com/unitycoder/UnityPointCloudViewer/issues/44
+- Fixed: Disable [x] Lightmap Static for point meshes (otherwise console error spam)
+- Fixed: Editor slowdown if viewer was selected https://github.com/unitycoder/UnityPointCloudViewer/issues/38
+- Fixed: Removed all unused variables from RuntimeViewer (and removed pragma disable warnings)
+- Fixed: CGO comma parsing issue https://github.com/unitycoder/UnityPointCloudViewer/issues/47
+
+- Removed: Completely removed old octree plugin and scripts related to it
+- Removed: Old brute force point picking
+- Removed: BaseFolder variable from BinaryViewerDX11 (just set your full path to filename instead)
+- Removed: void ShowMessage(string msg), used old GUIText. Now prints error to Debug.LogError() instead
+- Removed: SimpleCameraFly.cs (its now combined to SimpleSmoothMouseLook.cs)
+
+*-----------------------------------------------------------------------*
+
 v1.93
 
 - Added: New material "MeshDX11QuadNormals-DirectionalLight.mat" (Quad Billboard for Point Mesh that has Normals, supports Directional Light)
