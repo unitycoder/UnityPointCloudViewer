@@ -1,5 +1,29 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.10
+
+- Feature: Add Multithreading to runtimeviewer
+- Feature: Add Binary caching to binaryviewer (can save changes done during read data, like randomize)
+- Feature: New binary format with faster loading (using file extension *.ucpc)
+- Feature: Add split to grid option to PointCloud2Mesh converter (splits cloud into grid slices)
+- Feature: Add randomize pointcloud to PointCloud2Binary converter
+
+- Improved: Using new binary format (v2), loading 50 million points: 400ms (old version: 3200ms)
+- Improved: PointCloud2Mesh reading is about 2 times faster now
+- Improved: More info in the progress bars (point count)
+- Improved: PointCloud2Binary, Faster .ply parsing
+
+- Changed: Removed ThreadPool related code
+
+- Fixed: PointCloudViewer packed color bleeding
+
+- Notes: This is somewhat transition-version towards the new v2 format, so old format and the new format(V2) might not have all the same features yet.
+
+See latest updates/issues here:
+https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
 v2.00
 
 - Feature: Support for CommandBuffers (to draw DX11 points and/or depthbuffer)
