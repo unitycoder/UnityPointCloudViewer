@@ -19,3 +19,7 @@ Will be added to the wiki https://github.com/unitycoder/UnityPointCloudViewer/wi
 # Website
 
 http://unitycoder.com/blog/2014/03/19/asset-store-point-cloud-viewer-unity/
+
+# Commandline tools
+
+https://github.com/unitycoder/UnityPointCloudViewer/wiki/Commandline-Tools
