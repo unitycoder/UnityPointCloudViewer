@@ -1,5 +1,38 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.20
+
+- Feature: Add new tiles binary format (v3) (allows displaying huge point clouds using point lod system *Consider this as a "beta" feature)
+- Feature: PointCloud2Binary Converter: Add option to limit total imported point count (ideal for quickly testing import settings)
+- Feature: PointCloud2Binary Converter: Support large input files (tested 16gb ply file, with 432million points)
+- Feature: PointCloud2Mesh Converter: Meshes are saved as full gameobjects (instead of mesh assets only) when [x] Add meshes to current scene is enabled. Note: Not supported for LODS yet
+
+- Improved: PointCloud2Binary Converter: Add Cancel button to most of the conversion progressbars
+- Improved: Add more info into converter progress bars (pointcounts)
+- Improved: Add more validation and error checking here & there (will print to console)
+- Improved: Add cancel button to random cloud generator progress bars
+
+- Added: Example scene for v3 viewer: PointCloudTools/Demos/PointCloudViewer/Scenes/PointCloud-TilesViewerV3.scene
+
+- Changed: Upgraded Project to Unity 2017.4.24f1 (probably will stay in this version for a while)
+
+- Fixed: Various PLY importer issues (cloudcompare headers)
+- Fixed: Single .pts/.pcd cloud with less than 1000 points was skipped on import
+- Fixed: PointCloudConverter: Calculate correct bounds for v2 pointcloud
+- Fixed: Using intensity colors now works with V2 format
+- Fixed: Reading CGO data without RGB values into V2 format
+- Fixed: Added conditional check for reprecated rendering in 2019_1 and later
+- Fixed: Nullref error on random point cloud save cancel
+- Fixed: Skip Geomagic ASC file header comment rows
+- Fixed: v2 cancel loading if no RGB data in file
+
+- Note: When converting large clouds into v3 format, its better to use commandline LAS/LAZ converter (432m points, editor=~50mins, cmdline=~10mins) https://github.com/unitycoder/UnityPointCloudViewer/wiki/Commandline-Tools
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
 v2.10
 
 - Feature: Add Multithreading to runtimeviewer
