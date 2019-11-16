@@ -23,3 +23,8 @@ http://unitycoder.com/blog/2014/03/19/asset-store-point-cloud-viewer-unity/
 # Commandline tools
 
 https://github.com/unitycoder/UnityPointCloudViewer/wiki/Commandline-Tools
+
+# Screenshots
+
+![upload_2019-11-8_10-30-25](https://user-images.githubusercontent.com/5438317/68996189-7ee54b80-089f-11ea-9135-4ebd58e78c74.png)
+Point cloud with 432 million loaded points (optimized v3 format view) *[Cloud file from here](http://pointcloudwarehouse.com/details.html?pointCloudId=565378543598d06a64219aa6)
