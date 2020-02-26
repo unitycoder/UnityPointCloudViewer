@@ -1,5 +1,33 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.30
+
+- Feature: (V3) Load Tiles On Demand (previously all tiles were loaded into memory, now it only loads them when they become visible, and  with needed amount of points, then reloaded if need more points)
+- Feature: (V3) Distance Priority Loader (Load tiles near player first, previously it started loading tiles based on the distance to 0,0,0)
+- Feature: (V3) Adjustable GPU Upload Rate (Reduce or eliminate spikes during loading and initialization)
+- Feature: (V3) Added public GetVisibleTileCount() and GetVisiblePointCount() methods to V3 viewer (see example script ViewerStats.cs)
+- Feature: (V3) Added global tile resolution (visible_points*this_value=new amount) *Note: Camera needs to be rotated around to refresh tiles
+- Feature: (V3) Added global point size multiplier (original_pointsize*this_value=new size) *Note: Camera needs to be rotated around to refresh tiles, Requires separate shader which has SizeMultiplier property (PointCloudColorSizeDX11v2b.mat)
+- Feature: (V3) Added optional ForceGC checkbox (calls GC.Collect() after file operations, to release some temporary arrays, helps more when using NativeArrays in 2019.x)
+- Feature: (V3) Added support for Packed Colors (Use CommandLine LAS converter to generated packed color data)
+- Feature: (V3) Added support for NativeArrays (Allows disposing memory for far away tiles. Requires Unity 2019.1 or later)
+
+- Added: PointCloudColorSizeDX11v3-packed.mat and shader (to be used with v3 packed color data)
+- Added: Link to github wiki documentation page
+- Added: Random cloud generator: add .PTS format, cleanup UI
+
+- Changed: Moved some wip/experimental DX11 shaders under PointCloudTools\Shaders\DX11\Extras\
+- Changed: Moved some wip/experimental Mesh shaders under PointCloudTools\Shaders\Mesh\Extras\
+
+- Fixed: Obsolete/Deprecated warnings in 2018.x/2019.x https://github.com/unitycoder/UnityPointCloudViewer/issues/67
+- Fixed: (V3) Tiles not visible until rotate camera https://github.com/unitycoder/UnityPointCloudViewer/issues/66
+- Fixed: Mesh Converter not saving meshes if used [x] split to grid https://github.com/unitycoder/UnityPointCloudViewer/issues/70
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
 v2.20
 
 - Feature: Add new tiles binary format (v3) (allows displaying huge point clouds using point lod system *Consider this as a "beta" feature)
