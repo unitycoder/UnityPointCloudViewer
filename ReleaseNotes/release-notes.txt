@@ -11,6 +11,7 @@ v2.30
 - Feature: (V3) Added optional ForceGC checkbox (calls GC.Collect() after file operations, to release some temporary arrays, helps more when using NativeArrays in 2019.x)
 - Feature: (V3) Added support for Packed Colors (Use CommandLine LAS converter to generated packed color data)
 - Feature: (V3) Added support for NativeArrays (Allows disposing memory for far away tiles. Requires Unity 2019.1 or later)
+- Feature: (v1, V2) Added Area selection example (select points inside hull)
 
 - Added: PointCloudColorSizeDX11v3-packed.mat and shader (to be used with v3 packed color data)
 - Added: Link to github wiki documentation page
