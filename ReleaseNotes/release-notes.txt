@@ -1,5 +1,39 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.40
+
+- Info: URP/HDRP can be used, since they automatically call OnRenderObject() *Note: CommandBuffer-rendering option is not supported yet
+- Info: Standalone PointCloud converter is now open source: https://github.com/unitycoder/PointCloudConverter (commandline and initial GUI)
+- Info: For WebGL builds, use mesh converter with PointCloudAndroidSizeColorMesh material (see scene_mobile_heavy01.scene)
+
+- Feature: (V3) Initial point picking (measuring) system (see example scene: PointCloud-Measuring-V3.scene)
+- Feature: Added PCache Export option in PointCloud2Binary converter (pcache files can be used with unity VFX)
+- Feature: (V3) Allow 0 for gpuUploadSteps (skips waiting for frame in tile initialization to load more tiles faster, can cause lags in large tiles)
+- Feature: Added .ucpc (v2) runtime exporter and example scene (PointCloud-ModfiyAndSave-V2.scene)
+
+- Added: Show human friendly total point counts in V3 viewer (1000 = 1k, 1000000 = 1m, ..)
+- Added: V2 and V3 Lite Shaders (draws Triangles instead of Quads)
+- Added: PointCloudViewerDX11 option to enable CommandBuffer rendering into scene camera (otherwise cloud is not visible in scene view)
+- Added: Allow converting .PTS intensity color files to V3 format
+- Added: Mac Metal material and shaders for v2 and v3 (at Materials/Metal/)
+
+- Fixed: PointCloudManager check for viewer null references in Awake()
+- Fixed: MeshConverter Catia .ASC parsing issue
+- Fixed: Comma vs Dot issues in converters (due to Unity 2019.x changed the system) https://github.com/unitycoder/UnityPointCloudViewer/issues/69
+- Fixed: 2018.4 and later: duplicated prefab issue https://github.com/unitycoder/UnityPointCloudViewer/issues/72
+- Fixed: Handle .PLY with Density values (skip those rows) https://github.com/unitycoder/UnityPointCloudViewer/issues/76
+- Fixed: Removed WebGL errors https://github.com/unitycoder/UnityPointCloudViewer/issues/83
+- Fixed: Disable lighmap static flags for converted meshes 2019.x (to avoid console warning spam)
+
+- Changed: Some materials and shaders cleanup and rearranged folders
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.30
 
 - Feature: (V3) Load Tiles On Demand (previously all tiles were loaded into memory, now it only loads them when they become visible, and  with needed amount of points, then reloaded if need more points)
