@@ -33,5 +33,5 @@ https://github.com/unitycoder/UnityPointCloudViewer/wiki/Commandline-Tools
 Point cloud with 432 million loaded points (optimized v3 format view) *[Cloud file from here](http://pointcloudwarehouse.com/details.html?pointCloudId=565378543598d06a64219aa6)
 
 ### Videos
-Lidar dataset with ~10billion points
-https://www.youtube.com/watch?v=EyM5ttLaJkQ
+Lidar dataset with ~10billion points (youtube)<br>
+[![](http://img.youtube.com/vi/EyM5ttLaJkQ/0.jpg)](http://www.youtube.com/watch?v=EyM5ttLaJkQ "")
