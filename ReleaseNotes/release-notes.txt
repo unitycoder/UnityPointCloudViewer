@@ -1,5 +1,30 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.50
+
+- Improved: Brekel animated cloud (.bin) parsing is now ~2x faster
+
+- Added: New example scene (Sample-AnimatedPointCloudPlayer.scene) and small animated point cloud sample file
+- Added: Metal Uber shader (except circle shape)
+
+- Fixed: Brekel binary loader: files larger than 2gb failed parsing header correctly
+- Fixed: MeshConverter: Unity 2019.x and later, possible null ref errors on SaveAsPrefabAsset() https://github.com/unitycoder/UnityPointCloudViewer/issues/94
+- Fixed: NativeArray.GetSubArray not available in 2019.1 - 2019.2 https://github.com/unitycoder/UnityPointCloudViewer/issues/88
+- Fixed: V3 point picking: doesnt pick points if camera is inside node https://github.com/unitycoder/UnityPointCloudViewer/issues/97
+- Fixed: PointCloud-ModifyAndSave-V2.scene, points disappeared due to commandline window popping up during save (commandprompt window is now hidden, its used to merge binary files)
+
+- Changed: [x] Allow Unsafe Code is now required! (from Player Settings)
+- Changed: Brekel animated point cloud player is now separate script: BrekelPlayer.cs
+- Changed: Removed Animated Point cloud code and features from PointCloudViewerDX11.cs
+- Changed: PointCloudViewerDX11 arranged inspector values and titles
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.40
 
 - Info: URP/HDRP can be used, since they automatically call OnRenderObject() *Note: CommandBuffer-rendering option is not supported yet
