@@ -1,8 +1,6 @@
 # Unity PointCloud-Viewer
 Point Cloud Viewer and Tools for Unity
 
-**HeadsUp : Asset Store SALE 50% at November 17th 00:00:00 PT, and end on December 4th 23:59:59 PT**
-
 Available for **purchase in the Unity Asset Store**:<br>
 https://assetstore.unity.com/packages/tools/utilities/point-cloud-viewer-and-tools-16019?aid=1101lGti
 
