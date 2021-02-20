@@ -1,5 +1,30 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.60
+
+- Feature: Brekel animated cloud file streaming (stream data from disk, good for large files. Requires Brekel PointCloud V3 (beta or newer) with new unitycoder v3 format export) https://brekel.com/brekel-pointcloud-v3/
+
+- Added: MeshPointsDX11QuadSizeByDistance.mat (scales point sizes by distance and min-max range, can be used in DX11 mode for meshes, to make far away points bigger)
+
+- Improved: V1/V2 Point picking is now more accurate (and fixed slicing issues with some clouds)
+- Improved: Brekel animated cloud (.bin) parsing is now ~2-3x faster (on top of the previous 2x improvement)
+- Improved: Brekel animated cloud now uses less memory (no more padding or extra array copy/clear)
+
+- Fixed: MeshConverter: Don't add extra vertex padding to brekel mesh frames (smaller files, less verts)
+- Fixed: Build namespace errors (due to asmdef files, now removed) https://github.com/unitycoder/UnityPointCloudViewer/issues/104
+- Fixed: PointCloud-ModifyAndSave-V2 example, saved UCPC file was missing bounds data from header
+- Fixed: UCPC file saving failed to correct path, if output path had forward clashes
+
+- Changed: BinaryConverter, allow gridsize smaller than 1 (0.01) for really dense clouds (but can cause other issues, not really tested) https://github.com/unitycoder/UnityPointCloudViewer/issues/101
+- Changed: V3 viewer, hide mesh rendering toggle (since its not ready to be used yet)
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.50
 
 - Improved: Brekel animated cloud (.bin) parsing is now ~2x faster
