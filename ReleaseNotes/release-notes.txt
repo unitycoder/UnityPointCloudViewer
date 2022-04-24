@@ -1,5 +1,36 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.70
+
+- Feature: Binary converter, allow external file selection (so that you dont need to copy point cloud files inside Assets/ folder)
+- Feature: MeshConverter, Keep every Nth point. Can use this to further reduce point count on import.
+
+- Improved: V3 viewer, if you accidentally enter filename with empty spaces at the end, error message for invalid file is now printed with quotes, so can notice it easier "asdf.pcroot" > "asdf.pcroot "
+- CallReadPointCloudThreaded() can be now called from another thread or event (removed transform and gameobject references)
+
+- Added: PointCloudViewerDX11, added toggle: [x] Apply Translation Matrix, then point cloud follows Transform: pos, rot, scale (V1/V2 only)
+- Added: BrekelPlayer, added toggle: [x] Apply Translation Matrix, then point cloud follows Transform: pos, rot, scale *Note requires using "PointCloud_DX11_ColorSizeV2-TranslationMatrix.mat" material
+- Added: New material and shader "PointCloud_DX11_ColorSizeV2-TranslationMatrix" (required if use [x] Apply Translation Matrix feature)
+- Added: Example scene and script for Runtime LAS/LAZ conversion "PointCloud-runtime-laz-commandline-workaround.unity" (windows only)
+
+- Fixed: V3 viewer Duplicate "#MainThreadHelper" gameobject added into scene
+- Fixed: Comma vs Dot issue in V3 format (binary converter) https://github.com/unitycoder/UnityPointCloudViewer/issues/69
+- Fixed: Parsing PTS file with Normals at the end (XYZRGBNxNyNz)
+- Fixed: Parsing PTS file with Intensity and Normals (XYZIRGBNxNyNz)
+- Fixed: V2 viewer: Now doesnt lock file for reading (if other reader needs to read same binary file)
+
+- Changed: Add namespace to GLDebug
+
+- Note: HDRP support requires small modifications: https://github.com/unitycoder/UnityPointCloudViewer/issues/105
+- Note: URP support requires small modifications ** ONLY if you have issues with points getting "stuck" at UI position **: https://github.com/unitycoder/UnityPointCloudViewer/issues/126 
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.60
 
 - Feature: Brekel animated cloud file streaming (stream data from disk, good for large files. Requires Brekel PointCloud V3 (beta or newer) with new unitycoder v3 format export) https://brekel.com/brekel-pointcloud-v3/
