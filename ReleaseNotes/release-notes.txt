@@ -1,5 +1,32 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.80
+
+- Note: Upgraded to Unity 2019.4
+
+- Added: V3 viewer, Loader thread count setting (2-16) can help loading small tiled clouds faster https://github.com/unitycoder/UnityPointCloudViewer/issues/109#issuecomment-1752012364
+- Added: V3 viewer, Clamp max tile point count for all tiles or nearby vs further away (helps if you data has few dense spots and you dont want to filter whole cloud with external tools) https://github.com/unitycoder/UnityPointCloudViewer/issues/107
+- Added: DrawWireSphere helper method into PointCloudTools.cs
+- Added: Viewerstats script. Displays visible tile & point count and total point count (attach script to gameobject, assign references to viewer and UI text)
+- Added: Visualize culling spheres to ViewerStats (press "N") *Requires Gizmos enabled in gameview **Works only in editor, for debugging
+- Added: Visualize tile bounds to ViewerStats (press "B") *Requires Gizmos enabled in gameview **Works only in editor, for debugging
+- Added: Public GetVisibleTileCount, GetCullingSpheres, GetVisiblePointCount, GetAllTileBounds, InitIsReady, GetLoadQueueCount, RunGetPointsInsideBoxThread, GetPointsInsideBox methods into v3 viewer
+- Added: External licenses info https://github.com/unitycoder/UnityPointCloudViewer/wiki/Licenses
+- Added: Brekel new public methods & info https://github.com/unitycoder/UnityPointCloudViewer/wiki/View-Brekel-Point-Cloud-Pro-.bin-files#api-public-methods
+- Added: Initial format comparison table https://github.com/unitycoder/UnityPointCloudViewer/wiki/Compare-Formats *still work in progress
+
+- Fixed: RandomCloudGenerator can now generate different combinations of clouds at the same time (previously couldnt create v2 and pts etc.)
+- Fixed: Added missing namespaces to some scripts
+
+- Changed: Update public methods info: https://github.com/unitycoder/UnityPointCloudViewer/wiki/V3-Tiles-Format#api-public-methods
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.70
 
 - Feature: Binary converter, allow external file selection (so that you dont need to copy point cloud files inside Assets/ folder)
