@@ -1,5 +1,24 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.90
+
+- Added: WebGL-MeshPointPicking example scene, select points with mouse. (Intented for Mesh point picking webgl, but works in desktop too)
+- Added: WebGL-MeshSelectWithBox example scene, select points with BoxCollider (Intented for Mesh point picking webgl, but works in desktop too)
+- Added: V3 viewer, Mesh rendering option (but no colors yet, so its not useful)
+- Added: V3 viewer, Custom offset option for points
+- Added: New material/shader: PointCloud_DX11_ColorSizeV2 (Height Gradient)
+
+- Fixed: "UnityCoder_PointCloud_DX11_Uber_VR-SinglePass" material and Shader (works with VR singlepass)
+- Fixed: Crash if used native arrays with v3 tiles and tile point limit https://github.com/unitycoder/UnityPointCloudViewer/issues/143
+- Fixed: V3 Statistics script, total point count
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.80
 
 - Note: Upgraded to Unity 2019.4
@@ -24,8 +43,6 @@ Latest updates/issues:
 - https://github.com/unitycoder/UnityPointCloudViewer/issues
 
 *-----------------------------------------------------------------------*
-
-*** PointCloud Viewer & Tools for Unity ***
 
 v2.70
 
@@ -171,6 +188,9 @@ Latest updates/issues:
 
 *-----------------------------------------------------------------------*
 
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.20
 
 - Feature: Add new tiles binary format (v3) (allows displaying huge point clouds using point lod system *Consider this as a "beta" feature)
@@ -208,7 +228,7 @@ v2.10
 
 - Feature: Add Multithreading to runtimeviewer
 - Feature: Add Binary caching to binaryviewer (can save changes done during read data, like randomize)
-- Feature: New binary format with faster loading (using file extension *.ucpc)
+- Feature: New binary format with faster loading ("v2", using file extension *.ucpc)
 - Feature: Add split to grid option to PointCloud2Mesh converter (splits cloud into grid slices)
 - Feature: Add randomize pointcloud to PointCloud2Binary converter
 
@@ -282,6 +302,9 @@ v2.00
 - Removed: void ShowMessage(string msg), used old GUIText. Now prints error to Debug.LogError() instead
 - Removed: SimpleCameraFly.cs (its now combined to SimpleSmoothMouseLook.cs)
 
+See latest updates/issues here:
+https://github.com/unitycoder/UnityPointCloudViewer/issues
+
 *-----------------------------------------------------------------------*
 
 v1.93
@@ -293,9 +316,6 @@ v1.93
 
 - Changed: Upgraded project to Unity 5.6.1f1
 - Changed: Moved sample data from "StreamingAssets/" into "StreamingAssets/PointCloudViewerSampleData/"
-
-See latest updates/issues here:
-https://github.com/unitycoder/UnityPointCloudViewer/issues
 
 *-----------------------------------------------------------------------*
 
@@ -331,11 +351,13 @@ v1.91
 - Changed: When converting to mesh, new gameobject folder is created per conversion (instead of adding points under same gameobject)
 - Changed: Removed static singleton "instance" from BinaryViewerDX11.cs
 
-*----------------------------------------------------\O/-------------------*
+*-----------------------------------------------------------------------*
 
 v1.9
 
 - Improved: Faster point cloud to binary conversion (around 2-4 times faster)
+- Improved: Binaryfile loading is now bit times faster (in both non-threaded and threaded loaders)
+
 
 - Added: Octree point picking and closest point selection preview (for DX11 viewer) *Requires Nition Unity Octree (included in the package)
 - Added: ASC format now supports RGB colors (Geomagic XYZRGB files can be loaded with this, wont work with XYZ or XYZRGB)
@@ -349,16 +371,12 @@ v1.9
 
 - Fixed: MovieTexture error in "VideoDepthPlayer.cs" if building for mobile platforms
 - Fixed: Shader errors in 5.6 and later versions issue#28 https://github.com/unitycoder/UnityPointCloudViewer/issues/28
-- Fixed: `UnityEngine.Renderer.useLightProbes' is obsolete (in 5.6 and later)
+- Fixed: 'UnityEngine.Renderer.useLightProbes' is obsolete (in 5.6 and later)
 
 - Changed: Updated to Unity 5.3.7p4
-- Changed: Binaryfile loading is now bit times faster (in both non-threaded and threaded loaders)
 - Changed: Organized BinaryViewerDx11 inspector fields
 
-See latest updates/issues here:
-https://github.com/unitycoder/UnityPointCloudViewer/issues
-
-*----------------------------------------------------O.o-------------------*
+*-----------------------------------------------------------------------*
 
 v1.8
 
