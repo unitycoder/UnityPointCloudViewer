@@ -11,7 +11,7 @@ Feel free to post them at https://github.com/unitycoder/UnityPointCloudViewer/is
 
 ### Unity Forums
 
-http://forum.unity3d.com/threads/released-point-cloud-viewer-tools.240536/
+https://discussions.unity.com/t/released-point-cloud-viewer-tools/534863
 
 ### Documentation
 
