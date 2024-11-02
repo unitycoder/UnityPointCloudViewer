@@ -1,5 +1,37 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v2.95
+
+- Note: Upgraded project to Unity 2021.3.19f1
+
+- Feature: V3 Viewer, Add packed format type "4". Has XYZ+RGB+Intensity values in single file
+- Feature: V3 Viewer, ToggleColorMode(RGB/Intensity). Loads separate .pct.rgb file or .pct.int file
+- Feature: V3 Viewer, OnTileAppearEvent (Can be used to cull tile based on your own logic, before it appears)
+- Feature: V3 Viewer, GPSTimeSample.cs script (if you work with tile capture times & overlapped tiles. For example: you might want to hide overlapping tiles that are older than the original tile)
+- Feature: V3 Viewer, Add support for .pcroot header comment rows (starting with # in the file)
+
+- Added: V3 Viewer, Special RGB+Intensity+XYZ packed format & shaders (UnityCoder_PointCloud_DX11_ColorSizeV3-Int-Packed.mat) *Requires converting data with CommandLine LAS converter into that format
+- Added: V3 Viewer, Uber Packed VR SinglePass shader (UnityCoder_PointCloud_DX11_Uber_VR-SinglePass-Packed.mat)
+- Added: V3 Viewer, ProfileLoaderStatus(), to display time that loaderqueue took to load tiles (don't move while its loading to get same results. Good for checking if adjusting ThreadCount helps)
+- Added: RuntimeViewer, XYZRGB format, handle parsing invalid values (skip them)
+- Added: FeaturesV3.cs for toggling between Intensity/RGB colors mode (for v3 rgb+int packed format only)
+- Added: V3 viewer, Mesh rendering with Colors (Only for packed colors and DX11 shader like MeshPointsDX11QuadCircle-Packed.mat)
+
+- Fixed: V3 Viewer, "Cannot divide by zero exception" *Thanks to: https://github.com/unitycoder/UnityPointCloudViewer/issues/149
+- Fixed: GetPointsInsideBox() to work with Native Array (and different combinations of packed data)
+
+- Improved: GetPointsInsideBox() supports V3 viewer now with packed data
+
+- Changed: Adjusted GetPointsInsideBox.cs inspector fields/order/names
+- Changed: DynamicResolution, allow holding keys down in the example
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.90
 
 - Added: WebGL-MeshPointPicking example scene, select points with mouse. (Intented for Mesh point picking webgl, but works in desktop too)
