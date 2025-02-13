@@ -1,5 +1,32 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v3.00
+
+- Note: This is paid upgrade!
+
+- Feature: URP Support with Custom Renderer Feature (CustomPass with RenderGraph support for Unity6000+)
+- Feature: HDRP Support with Custom Renderer Feature
+
+- Added: V3 Viewer, useURPCustomPass bool to BinaryViewerDX11.cs (to enable custom pass rendering in URP)
+- Added: V3 Viewer, useHDRPCustomRenderer bool to BinaryViewerDX11.cs (to enable custom renderer rendering in HDRP)
+- Added: Downloadable sample file for V3 mesh tiles rendering scene (packed format) https://files.fm/f/xv784aw9xb
+- Added: Menu item, "Window/PointCloudTools/Convert Sample Materials to URP" to convert sample scene standard materials to URP materials (for those boxes/spheres used in sample scenes, or use unitys own material converter)
+- Added: Menu item, "Window/PointCloudTools/Convert Sample Materials to HDRP" to convert sample scene standard materials to HDRP materials (for those boxes/spheres used in sample scenes, or use unitys own material converter)
+
+- Fixed: Build error (editor script was not in Editor folder)
+
+- Changed: PointCloudViewer folders now contain AssemblyDefinitions (it is only way to detect URP and HDRP in CustomPass scripts)
+- Changed: All namespaces have been renamed! (unity doesnt allow "unitylibrary.." or "unitycoder.." in namespaces)
+
+- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v2.95
 
 - Note: Upgraded project to Unity 2021.3.19f1
