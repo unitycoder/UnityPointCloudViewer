@@ -2,7 +2,7 @@
 Point Cloud Viewer and Tools for Unity
 
 Available for **purchase in the Unity Asset Store**:<br>
-New version: https://assetstore.unity.com/packages/tools/utilities/point-cloud-viewer-and-tools-3-310385?aid=1101lGti (This is also paid upgrade to old version, with 120 days grace perioid)
+**New version:** https://assetstore.unity.com/packages/tools/utilities/point-cloud-viewer-and-tools-3-310385?aid=1101lGti (This is also paid upgrade to old version, with 120 days grace period)<br>
 (ORIGINAL VERSION, will be deprecated) https://assetstore.unity.com/packages/tools/utilities/point-cloud-viewer-and-tools-16019?aid=1101lGti
 
 This is public repository for Unity3D Point Cloud- Plugin
