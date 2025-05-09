@@ -1,5 +1,25 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v3.01
+
+- Note: Upgraded project to Unity 2022.3.26f1
+
+- Feature: V3 Viewer, Add packed format type "5". Has XYZ+RGB+Intensity+Classification values in single file (and add shaders for these)
+
+- Added: Sample scene for V3 override with additional features (like toggle color mode: RGB/Intensity/Classification/Gradient) *but no sample file, you need to create your own with https://github.com/unitycoder/PointCloudConverter
+
+- Fixed: Point picking for packed data
+
+- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts PLY/LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v3.00
 
 - Note: This is paid upgrade!
@@ -18,7 +38,7 @@ v3.00
 - Changed: PointCloudViewer folders now contain AssemblyDefinitions (it is only way to detect URP and HDRP in CustomPass scripts)
 - Changed: All namespaces have been renamed! (unity doesnt allow "unitylibrary.." or "unitycoder.." in namespaces)
 
-- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
+- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts PLY/LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
 
 Latest updates/issues:
 - https://github.com/unitycoder/UnityPointCloudViewer/issues
@@ -51,9 +71,6 @@ v2.95
 
 - Changed: Adjusted GetPointsInsideBox.cs inspector fields/order/names
 - Changed: DynamicResolution, allow holding keys down in the example
-
-Latest updates/issues:
-- https://github.com/unitycoder/UnityPointCloudViewer/issues
 
 *-----------------------------------------------------------------------*
 
