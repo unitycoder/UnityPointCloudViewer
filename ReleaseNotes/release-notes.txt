@@ -1,5 +1,19 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v3.02
+
+- Note: Upgraded project to Unity 6000.0.66f2 *Since asset store soon requires Unity 6000+
+- Feature: V3 Viewer, Root loading is now threaded and tile materials are generated on demand. (faster loading and less initial memory usage)
+- Improved: RuntimeLoader: Slightly faster loading (RuntimeViewerDX11 scene)
+- Fixed: HDRP Reference issue https://github.com/unitycoder/UnityPointCloudViewer/issues/151
+
+- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts PLY/LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
 v3.01
 
 - Note: Upgraded project to Unity 2022.3.26f1
