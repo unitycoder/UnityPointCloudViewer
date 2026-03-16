@@ -1,5 +1,23 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v3.03
+
+- Added: URP, Depth support for URP Custom Render Pass (this allows sorting transparent objects better, instead of always drawing on top or behind them)
+- Added: URP, V3 Shader with Receive Shadows support
+- Added: URP, EyeDome post processing effect (first version, not very useful and if affects all objects..) https://github.com/unitycoder/UnityPointCloudViewer/issues/120
+- Added: URP, V2-URP-DistanceBasedLight.shader to support lighting based on distance (with light tint color and receive shadows for directional lights)
+- See Assets/PointCloudTools/SRP/URP/ for those new URP files
+- Fixed: SimpleSmoothMouseLook, fix camera annoying wrong direction jump after alt tab
+
+- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts PLY/LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v3.02
 
 - Note: Upgraded project to Unity 6000.0.66f2 *Since asset store soon requires Unity 6000+
