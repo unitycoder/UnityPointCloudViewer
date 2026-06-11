@@ -1,5 +1,22 @@
 *** PointCloud Viewer & Tools for Unity ***
 
+v3.04
+
+- Changed: URP is now default rendering path (birp and hdrp still works too, but using URP custom pass fixes the transparent sorting issues)
+- Changed: Removed Non-native array support from V3 viewer (it was there for 2019.x and earlier versions)
+- Added: Classification stats reader (new feature in external PointCloudConverter, allows searching tiles that contains specific classification points)
+- Fixed: All sample scripts now work with both input systems (old, new, both)
+- Fixed: Runtime laz converter sample arguments (-exportformat is required in external PointCloudConverter)
+
+- Bonus: You get 50% discount on this external tool https://las2gltf.kelobyte.fi/ (Converts PLY/LAS/LAZ files into GLB/GLTF format, so you can view GLTF points clouds without point cloud plugin in Unity!)
+
+Latest updates/issues:
+- https://github.com/unitycoder/UnityPointCloudViewer/issues
+
+*-----------------------------------------------------------------------*
+
+*** PointCloud Viewer & Tools for Unity ***
+
 v3.03
 
 - Added: URP, Depth support for URP Custom Render Pass (this allows sorting transparent objects better, instead of always drawing on top or behind them)
